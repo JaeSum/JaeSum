@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sum Tze Jian — Operations &amp; Automation Analyst</title>
+<meta name="description" content="Portfolio of Sum Tze Jian (Jae): AI support automation, reconciliation systems, data pipelines and BigQuery dashboards for a multi-market fintech.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #12355b; --ink: #1d1d1f; --muted: #5b6470; --line: #e3e7ec;
+    --bg: #f7f8fa; --card: #ffffff; --accent: #2f6fb3; --chip: #eef3f9;
+    --todo-bg: #fff4d6; --todo-ink: #8a5a00;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Sans 3", system-ui, sans-serif; font-size: 17px; line-height: 1.55; color: var(--ink); background: var(--bg); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+  /* Placeholder marker: search the file for class="todo" to find everything you still need to fill in */
+  .todo { background: var(--todo-bg); color: var(--todo-ink); padding: 0 4px; border-radius: 3px; font-weight: 600; }
+
+  header { background: var(--navy); color: #fff; padding: 64px 0 48px; }
+  header h1 { font-family: "Source Serif 4", Georgia, serif; font-weight: 600; font-size: 44px; letter-spacing: .5px; }
+  header .role { font-size: 20px; opacity: .9; margin-top: 4px; }
+  header .intro { max-width: 680px; margin-top: 18px; font-size: 18px; opacity: .92; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .btn { display: inline-block; padding: 9px 16px; border-radius: 6px; font-weight: 600; font-size: 15px; border: 1px solid rgba(255,255,255,.45); color: #fff; }
+  .btn.primary { background: #fff; color: var(--navy); border-color: #fff; }
+  .btn:hover { text-decoration: none; opacity: .9; }
+
+  nav { position: sticky; top: 0; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); z-index: 5; }
+  nav .wrap { display: flex; gap: 22px; padding-top: 12px; padding-bottom: 12px; font-weight: 600; font-size: 15px; overflow-x: auto; }
+  nav a { color: var(--muted); white-space: nowrap; }
+
+  section { padding: 56px 0 8px; }
+  h2 { font-size: 14px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--navy); margin-bottom: 18px; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px; }
+  .stat b { display: block; font-size: 28px; color: var(--navy); line-height: 1.1; }
+  .stat span { font-size: 14px; color: var(--muted); }
+
+  .project { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 28px; margin-bottom: 22px; }
+  .project h3 { font-size: 24px; color: var(--navy); }
+  .project .sub { color: var(--muted); margin: 2px 0 14px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+  .tags span { background: var(--chip); color: var(--navy); font-size: 13px; font-weight: 600; padding: 3px 9px; border-radius: 20px; }
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; background: var(--bg); border: 1px dashed #cfd6de; border-radius: 8px; padding: 12px; margin-bottom: 18px; font-size: 14px; }
+  .flow .step { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; font-weight: 600; }
+  .flow .arr { color: var(--muted); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; }
+  .grid2 h4 { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .grid2 ul { padding-left: 18px; }
+  .grid2 li { margin-bottom: 4px; }
+  .impact { margin-top: 18px; padding: 14px 16px; background: #f0f6ee; border-left: 4px solid #3c8a4a; border-radius: 6px; }
+  .demo { margin-top: 18px; aspect-ratio: 16 / 9; border-radius: 8px; background: #eef1f5; border: 1px dashed #c6ced8; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 15px; text-align: center; padding: 16px; }
+  .demo iframe { width: 100%; height: 100%; border: 0; border-radius: 8px; }
+
+  .more { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .more div { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+  .more b { color: var(--navy); }
+
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .skills div { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+  .skills b { display: block; color: var(--navy); margin-bottom: 4px; }
+
+  .timeline div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .timeline span { color: var(--muted); white-space: nowrap; }
+
+  footer { margin-top: 56px; padding: 40px 0; background: var(--navy); color: #fff; }
+  footer a { color: #fff; text-decoration: underline; }
+
+  @media (max-width: 720px) {
+    header h1 { font-size: 34px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .grid2, .more, .skills { grid-template-columns: 1fr; }
+    .timeline div { flex-direction: column; gap: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Sum Tze Jian</h1>
+    <div class="role">Operations &amp; Automation Analyst · Kuala Lumpur, Malaysia</div>
+    <p class="intro">I build the automation, data pipelines and reporting that a multi-market fintech runs on, across Malaysia, Indonesia and the Philippines. My work is mostly in n8n, BigQuery, Looker Studio and LLMs, and it ships to production and gets used every day.</p>
+    <div class="links">
+      <a class="btn primary" href="Sum-Tze-Jian-CV-2026.pdf" download>Download CV</a>
+      <a class="btn" href="https://www.linkedin.com/in/tzejian-sum-4bb7431a3/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="mailto:sumtzejian@gmail.com">sumtzejian@gmail.com</a>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#projects">Projects</a>
+    <a href="#more">More work</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section>
+    <h2>At a glance</h2>
+    <div class="stats">
+      <div class="stat"><b>300K+</b><span>transactions reconciled a month</span></div>
+      <div class="stat"><b>13</b><span>banks &amp; payment providers integrated</span></div>
+      <div class="stat"><b>3</b><span>markets, 3 currencies, 3 languages</span></div>
+      <div class="stat"><b><span class="todo">[X]</span></b><span>hours of manual work saved a week</span></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Featured projects</h2>
+
+    <!-- PROJECT 1: BELLA -->
+    <article class="project">
+      <h3>Bella: AI customer support pipeline</h3>
+      <p class="sub">Grew it from a hackathon prototype into a production system handling support tickets across 3 markets.</p>
+      <div class="tags"><span>n8n</span><span>Zendesk API</span><span>LLMs</span><span>RAG</span><span>BigQuery</span><span>JavaScript</span></div>
+      <div class="flow">
+        <span class="step">Zendesk ticket</span><span class="arr">→</span>
+        <span class="step">Clean &amp; de-spam</span><span class="arr">→</span>
+        <span class="step">Live customer lookup (MY/ID/PH)</span><span class="arr">→</span>
+        <span class="step">LLM intent</span><span class="arr">→</span>
+        <span class="step">Reply in EN / MS / ID</span><span class="arr">or</span>
+        <span class="step">RAG agent drafts note for an agent</span>
+      </div>
+      <div class="grid2">
+        <div><h4>Problem</h4><p>Support agents spent hours answering the same questions about credits, transactions and accounts, in three languages, while having to look up each customer by hand.</p></div>
+        <div><h4>What I built</h4><p>A pipeline that reads each ticket's intent, pulls the customer's live account data and sends a personalised reply in English, Malay or Indonesian. Reply rules can be changed without code.</p></div>
+        <div><h4>Key decisions</h4>
+          <ul>
+            <li>The AI agent only drafts internal notes and never replies to customers on its own, which keeps people in control.</li>
+            <li>Repeat tickets get a clearer re-explanation instead of the same reply twice.</li>
+            <li>Tickets with more than one problem get a separate run for each issue.</li>
+          </ul></div>
+        <div><h4>Also handles</h4>
+          <ul>
+            <li>Merging duplicate tickets automatically</li>
+            <li>Following up on pending transactions and missing credits on a schedule</li>
+          </ul></div>
+      </div>
+      <div class="impact"><b>Impact:</b> <span class="todo">[X% of tickets handled automatically]</span>, <span class="todo">[first-response time cut from X to Y]</span>, <span class="todo">[X agent hours saved a week]</span>.</div>
+      <div class="demo"><!-- Replace this div's text with: <iframe src="YOUR_YOUTUBE_OR_LOOM_EMBED_LINK" allowfullscreen></iframe> -->60–90 second demo video goes here (use dummy tickets)</div>
+    </article>
+
+    <!-- PROJECT 2: RECONCILIATION -->
+    <article class="project">
+      <h3>Company-wide transaction reconciliation system</h3>
+      <p class="sub">The system the whole business uses to reconcile its payouts every day.</p>
+      <div class="tags"><span>Power Query (M)</span><span>Excel</span><span>Data modelling</span><span>n8n</span></div>
+      <div class="flow">
+        <span class="step">13 provider statements</span><span class="arr">→</span>
+        <span class="step">Parser for each provider</span><span class="arr">→</span>
+        <span class="step">Normalised ledger</span><span class="arr">→</span>
+        <span class="step">Cutoff-aware status matching</span><span class="arr">→</span>
+        <span class="step">Exceptions to review</span>
+      </div>
+      <div class="grid2">
+        <div><h4>Problem</h4><p>Payouts go through 13 banks and payment providers in 3 countries, and every provider exports in a different and often messy format. Matching 300K+ transactions a month by hand was slow and easy to get wrong.</p></div>
+        <div><h4>What I built</h4><p>A reconciliation model with a parser for each provider and shared filtering logic, which matches every payout against bank records and flags only the exceptions.</p></div>
+        <div><h4>Key decisions</h4>
+          <ul>
+            <li>Matching follows each bank's own cutoff time, so late-evening transactions land on the right day.</li>
+            <li>Detects and handles one provider's two different export formats automatically.</li>
+            <li>Custom parsing for files that break standard CSV rules.</li>
+          </ul></div>
+        <div><h4>Scale</h4>
+          <ul>
+            <li>300K+ transactions a month</li>
+            <li>13 providers across MY, ID and PH</li>
+          </ul></div>
+      </div>
+      <div class="impact"><b>Impact:</b> daily reconciliation cut from <span class="todo">[X hours]</span> to <span class="todo">[Y minutes]</span>; used by <span class="todo">[which teams]</span>.</div>
+      <div class="demo">Short walkthrough or screenshots go here (use dummy data)</div>
+    </article>
+
+    <!-- PROJECT 3: OLLA -->
+    <article class="project">
+      <h3>Olla: internal operations web app</h3>
+      <p class="sub">One home screen where the ops team tracks tasks, raises tickets and pulls reports.</p>
+      <div class="tags"><span>n8n</span><span>HTML / CSS / JavaScript</span><span>Teams Bot Framework</span><span>Microsoft Graph API</span><span>LLMs</span><span>BigQuery</span></div>
+      <div class="flow">
+        <span class="step">Teams chats</span><span class="arr">→</span>
+        <span class="step">Custom Teams bot</span><span class="arr">→</span>
+        <span class="step">AI picks out tasks</span><span class="arr">→</span>
+        <span class="step">Olla web app</span><span class="arr">→</span>
+        <span class="step">Tasks · Tickets · Reports · Forecast</span>
+      </div>
+      <div class="grid2">
+        <div><h4>Problem</h4><p>Ops requests were scattered across many Teams chats, so things got missed and nobody could see what was still open.</p></div>
+        <div><h4>What I built</h4><p>A web app with tabs for an AI task tracker that reads Teams chats, a ticket intake form, self-service BigQuery report downloads and the daily funding forecast.</p></div>
+        <div><h4>Key decisions</h4>
+          <ul>
+            <li>Built my own Teams bot (with token validation) to read chats securely.</li>
+            <li>Every action is linked to a named user, so there's an audit trail.</li>
+            <li>Attachments are stored in SharePoint, not in the automation platform.</li>
+          </ul></div>
+        <div><h4>Governance</h4>
+          <ul>
+            <li>Built a change manager so workflow changes go from draft to peer approval before they are published</li>
+          </ul></div>
+      </div>
+      <div class="impact"><b>Impact:</b> used daily by <span class="todo">[X people]</span>; <span class="todo">[X tasks tracked a month]</span>.</div>
+      <div class="demo">Screen recording of Olla goes here (use dummy tasks)</div>
+    </article>
+
+    <!-- PROJECT 4: PIPELINES + MCP -->
+    <article class="project">
+      <h3>Wage-credit data pipelines &amp; ops MCP server</h3>
+      <p class="sub">Reliable pipelines that turn client attendance and HR files into wage credits, plus a safe way for AI assistants to investigate and fix data.</p>
+      <div class="tags"><span>n8n</span><span>SFTP</span><span>Azure Cosmos DB</span><span>Azure Blob Storage</span><span>MCP</span><span>REST APIs</span></div>
+      <div class="flow">
+        <span class="step">Client SFTP files</span><span class="arr">→</span>
+        <span class="step">Parse &amp; dedupe</span><span class="arr">→</span>
+        <span class="step">Dry run / review</span><span class="arr">→</span>
+        <span class="step">Credit to employees</span><span class="arr">→</span>
+        <span class="step">Rollback if needed</span>
+      </div>
+      <div class="grid2">
+        <div><h4>Problem</h4><p>Employees' earned-wage credits depend on attendance and HR movement files from enterprise clients, each with its own format and its own quirks. A single mistake affects real people's pay.</p></div>
+        <div><h4>What I built</h4><p>Scheduled pipelines that collect client files, dedupe them against what's already been credited and apply onboarding, resignation and suspension changes, with dry runs and rollback.</p></div>
+        <div><h4>Engineering choices</h4>
+          <ul>
+            <li>Idempotent processing: deduplication and watermarks, so nothing is credited twice.</li>
+            <li>Dry-run mode and a rollback workflow for every risky change.</li>
+            <li>Login-protected review queue for records that need a person to check them.</li>
+          </ul></div>
+        <div><h4>MCP server</h4>
+          <ul>
+            <li>6 tools that let AI assistants look up transactions across markets and check wallet balances.</li>
+            <li>Data fixes run in two steps, prepare then execute, with optimistic concurrency so nothing is overwritten.</li>
+          </ul></div>
+      </div>
+      <div class="impact"><b>Impact:</b> <span class="todo">[X employees credited daily]</span> across <span class="todo">[X]</span> enterprise clients; <span class="todo">[manual uploads removed]</span>.</div>
+    </article>
+  </section>
+
+  <section id="more">
+    <h2>More work</h2>
+    <div class="more">
+      <div><b>Daily funding forecast</b><br>Predicts each bank's payouts across 3 markets, checks them against live balances and posts the top-up amount for finance to Teams every morning.</div>
+      <div><b>CRM &amp; client-health dashboards</b><br>Looker Studio dashboards that track client progress and account health in MYR, IDR and PHP, converted to USD.</div>
+      <div><b>Variance tracker</b><br>Compares billed deductions with client repayment files to show outstanding balances and overdue cycles for each employer.</div>
+      <div><b>KPI &amp; cycle reporting</b><br>Month-to-date KPI reports, withdrawal-cycle scorecards and forecasting, built in BigQuery with the right local time zone for each market.</div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><b>Data &amp; Analytics</b>SQL (BigQuery), Python, Power Query (M), Looker Studio, forecasting, reconciliation, variance analysis, ETL design, KPI reporting, campaign, lead generation, customer and demographic analytics</div>
+      <div><b>Automation &amp; Integration</b>n8n, REST APIs, webhooks, SFTP, UiPath, Excel automation (Power Query, VBA), custom business apps (HTML, CSS, JavaScript), Teams Bot Framework, Microsoft Graph API, idempotent pipeline design</div>
+      <div><b>AI &amp; Intelligence Systems</b>LLM classification, RAG agents, MCP server development, prompt engineering</div>
+      <div><b>Cloud &amp; Data Platforms</b>Google Cloud (BigQuery), Azure Cosmos DB, Azure Data Services (Blob Storage)</div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div><p><b>Operations Analyst</b> · Paywatch Global, Kuala Lumpur</p><span>Jun 2025 – Present</span></div>
+      <div><p><b>Logistics Analyst</b> · Across the Ocean Shipping, Melbourne. Cut freight handling costs by 12% and job turnaround time by 60%</p><span>Sep 2023 – Jan 2025</span></div>
+      <div><p><b>Junior Financial Crime Analyst</b> · AML Ops, Melbourne</p><span>Oct 2022 – Sep 2023</span></div>
+      <div><p><b>Credit Analyst Intern</b> · TMC, Melbourne</p><span>May 2022 – Oct 2022</span></div>
+      <div><p><b>Bachelor of Business</b> (Supply Chain &amp; Logistics / Finance) · RMIT University</p><span>2023</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2 style="color:#fff">Let's talk</h2>
+    <p>Open to data, automation and BizOps roles. Email <a href="mailto:sumtzejian@gmail.com">sumtzejian@gmail.com</a> or message me on <a href="https://www.linkedin.com/in/tzejian-sum-4bb7431a3/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    <p style="opacity:.7; font-size:14px; margin-top:14px">All screenshots and demos use dummy data. No client or customer information is shown.</p>
+  </div>
+</footer>
+
+</body>
+</html>
